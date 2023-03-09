@@ -5,7 +5,7 @@
     <string name="contrasena">Contraseña</string>
     <string name="registrarse">Registrarse</string>
     <string name="registrar">Registrar</string>
-    <string name="RegresaLogin">¿Ya tienes cuenta? Inicia sesion</string>
+    <string name="RegresaLogin">¿Ya tienes cuenta? Inicia sesión</string>
     <string name="NuevaCuenta">Crea una nueva cuenta</string>
     <string name="salir">Salir</string>
 </resources>
