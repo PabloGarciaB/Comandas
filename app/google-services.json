@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743634548389",
+    "project_id": "appcomandas-e2f54",
+    "storage_bucket": "appcomandas-e2f54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743634548389:android:de8a09087f57ca750e3f4c",
+        "android_client_info": {
+          "package_name": "com.example.comandas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743634548389-s6ppu86acdkk1pugjr5h1m4e5oqpekib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQXR0MqoRwkl772UVY5kpnUXEvrI-wIy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743634548389-s6ppu86acdkk1pugjr5h1m4e5oqpekib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
