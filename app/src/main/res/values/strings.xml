@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Comandas</string>
-    <string name="login">login</string>
+    <string name="login">Iniciar</string>
     <string name="email">Email</string>
     <string name="contrasena">Contraseña</string>
-    <string name="registrarse">Registrarse</string>
+    <string name="registrarse">Registrar nuevo usuario</string>
     <string name="registrar">Registrar</string>
-    <string name="RegresaLogin">¿Ya tienes cuenta? Inicia sesión</string>
-    <string name="NuevaCuenta">Crea una nueva cuenta</string>
+    <string name="RegresaLogin">Terminar sesion</string>
+    <string name="Entrar_Admin">¿Eres administrador? Identificate</string>
     <string name="salir">Salir</string>
+    <string name="TituloLoginAdmin">Administrador</string>
+    <string name="Titulo_Iniciar">Iniciar sesion</string>
 </resources>

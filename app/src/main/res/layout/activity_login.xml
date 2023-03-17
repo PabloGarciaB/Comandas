@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:text="@string/login"
+        android:text="@string/Titulo_Iniciar"
         android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,9 +26,11 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
-            android:hint="@string/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:textColorHint="#616161"
+            tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,9 +39,11 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
-            android:hint="@string/contrasena"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/contrasena"
+            android:textColorHint="#616161"
+            tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
@@ -60,7 +64,7 @@
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:id="@+id/RegisterNow"
-        android:text="@string/NuevaCuenta"
+        android:text="@string/Entrar_Admin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

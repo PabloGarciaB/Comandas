@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -20,37 +19,37 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Registration extends AppCompatActivity {
+public class LoginAdmin extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword;
-    Button buttonReg;
+    Button buttonLog;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
-    TextView textView;
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(), Registration.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_login_admin);
+
         mAuth = FirebaseAuth.getInstance();
         editTextEmail= findViewById(R.id.email);
         editTextPassword= findViewById(R.id.password);
-        buttonReg = findViewById(R.id.btn_registrar);
+        buttonLog = findViewById(R.id.btn_login);
         progressBar =findViewById(R.id.progressBar);
-        textView = findViewById(R.id.endLogin);
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        buttonReg.setOnClickListener(new View.OnClickListener() {
+        buttonLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
@@ -59,29 +58,27 @@ public class Registration extends AppCompatActivity {
                 password = String.valueOf(editTextPassword.getText());
 
                 if (TextUtils.isEmpty(email)){
-                    Toast.makeText(Registration.this, "Ingresa un email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginAdmin.this, "Ingresa un email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)){
-                    Toast.makeText(Registration.this, "Ingresa tu contrasena", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginAdmin.this, "Ingresa tu contrasena", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                mAuth.createUserWithEmailAndPassword(email, password)
+                mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Registration.this, "Cuenta creada",
-                                            Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                                    Toast.makeText(getApplicationContext(), "Sesion valida", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), Registration.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Registration.this, "No se creo la cuenta.",
+                                    Toast.makeText(LoginAdmin.this, "Sesion fallida.",
                                             Toast.LENGTH_SHORT).show();
 
                                 }
