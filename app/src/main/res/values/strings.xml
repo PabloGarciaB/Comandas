@@ -10,4 +10,11 @@
     <string name="salir">Salir</string>
     <string name="TituloLoginAdmin">Administrador</string>
     <string name="Titulo_Iniciar">Iniciar sesion</string>
+    <string name="btn_Titulo_Inventario">Inventario</string>
+    <string name="nombre_articulo_hint">Nombre del articulo</string>
+    <string name="prueba1_editardespues">Prueba1</string>
+    <string name="cantidad_articulo">Cantidad: </string>
+    <string name="titulo_fechaRegistro">Fecha de registro</string>
+    <string name="numero_de_unidades_hint">Numero de unidades</string>
+    <string name="precio_articulo_hint">Precio</string>
 </resources>
