@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="15dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lblNombreArticulo"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/nombre_articulo_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/art_nombre"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="xxx"
+        android:layout_toEndOf="@+id/lblNombreArticulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/lblUnidades"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/cantidad_articulo"
+        android:layout_below="@+id/lblNombreArticulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/art_unidades"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="xxx"
+        android:layout_below="@id/art_nombre"
+        android:layout_toEndOf="@+id/lblUnidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/lblPrecios"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/precio_articulo_hint"
+        android:layout_below="@+id/lblUnidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/art_precio"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="xxx"
+        android:layout_below="@id/lblUnidades"
+        android:layout_toEndOf="@+id/lblPrecios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/lblFechaRegistro"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/fecha_de_registro_label"
+        android:layout_below="@+id/lblPrecios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/fecha_registro_art"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="2020-10-10 10:10:10"
+        android:layout_below="@id/lblPrecios"
+        android:layout_toEndOf="@+id/lblFechaRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+
+</RelativeLayout>

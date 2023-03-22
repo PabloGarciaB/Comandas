@@ -9,49 +9,68 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Añadir producto"
+            android:text="@string/a_adir_producto"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:gravity="center"    
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
             />
 
         <EditText
             android:id="@+id/inputNombreProducto"
-            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:hint="@string/nombre_articulo_hint"
             android:minHeight="48dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="15dp"
+            android:textColorHint="#8D6E63"
+            android:autofillHints=""
+            android:inputType="text"
+            />
 
         <EditText
             android:id="@+id/inputNumUnidades"
-            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:hint="@string/numero_de_unidades_hint"
             android:minHeight="48dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="10dp"
+            android:textColorHint="#8D6E63"
+            android:inputType="number"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/inputPrecioProducto"
-            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:hint="@string/precio_articulo_hint"
             android:minHeight="48dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="10dp"
+            android:inputType="number"
+            android:autofillHints="" />
 
         <Button
             android:text="@string/confirmar_producto"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            />
 
 
-        </LinearLayout>
+
+
 
 </LinearLayout>
