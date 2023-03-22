@@ -56,32 +56,5 @@
         android:layout_width="match_parent"
         android:layout_height="450dp" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:drawableLeft="@drawable/ic_add"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="5dp"
-            android:text="@string/registrar_nuevo_producto_lbl"
-            android:id="@+id/btn_registrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:drawableLeft="@drawable/ic_edit"
-            android:layout_marginLeft="8dp"
-            android:text="@string/editar_producto_lbl"
-            android:id="@+id/btn_editar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:drawableLeft="@drawable/ic_delete"
-            android:layout_marginLeft="8dp"
-            android:text="@string/eliminar_producto_lbl"
-            android:id="@+id/btn_borrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </GridLayout>
 
 </LinearLayout>
