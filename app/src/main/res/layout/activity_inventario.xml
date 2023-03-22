@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityInventario">
+    <LinearLayout
+        android:id="@+id/LinearLayoutEditar"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/nom_articulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre_articulo_hint"
+            android:paddingTop="10dp"
+            />
+
+        <EditText
+            android:id="@+id/num_unidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/numero_de_unidades_hint"
+            android:paddingTop="12dp"
+            />
+
+        <EditText
+            android:id="@+id/precio_articulo"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:hint="@string/precio_articulo_hint"
+            android:paddingTop="10dp"
+            />
+
+        <Button
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/btn_Cancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="450dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="@string/registrar_nuevo_producto"
+            android:id="@+id/btn_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </GridLayout>
+
+</LinearLayout>
