@@ -18,9 +18,11 @@
     <string name="numero_de_unidades_hint">Numero de unidades</string>
     <string name="precio_articulo_hint">Precio</string>
     <string name="registrar_nuevo_producto_lbl">Añadir</string>
-    <string name="editar_producto_lbl">Editar</string>
+    <string name="guardar_producto_lbl">Guardar</string>
     <string name="eliminar_producto_lbl">Eliminar</string>
     <string name="confirmar_producto">Añadir</string>
     <string name="a_adir_producto">Añadir producto</string>
     <string name="fecha_de_registro_label">Fecha. Reg</string>
+    <string name="guardar_menu_label">Guardar</string>
+    <string name="eliminar_menu_label">Eliminar</string>
 </resources>
