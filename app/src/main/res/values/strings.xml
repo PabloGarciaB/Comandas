@@ -17,4 +17,6 @@
     <string name="titulo_fechaRegistro">Fecha de registro</string>
     <string name="numero_de_unidades_hint">Numero de unidades</string>
     <string name="precio_articulo_hint">Precio</string>
+    <string name="registrar_nuevo_producto">Añadir nuevo producto</string>
+    <string name="confirmar_producto">Añadir</string>
 </resources>

@@ -9,6 +9,7 @@
     <LinearLayout
         android:id="@+id/LinearLayoutEditar"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp">
@@ -46,8 +47,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cancelar"
+            android:textAllCaps="false"
             />
-
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="450dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="@string/registrar_nuevo_producto"
+            android:id="@+id/btn_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </GridLayout>
 
 </LinearLayout>
