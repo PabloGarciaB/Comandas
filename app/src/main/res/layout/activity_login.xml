@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/contrasena"
             android:textColorHint="#616161"
+            android:inputType="textPassword"
             tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
