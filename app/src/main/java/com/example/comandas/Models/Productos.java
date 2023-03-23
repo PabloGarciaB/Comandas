@@ -6,7 +6,7 @@ public class Productos {
     private String numUnidades;
     private String precioProducto;
     private String fechaRegistro; //Fecha ingresada por el usuario
-    private String timestamp; //Fecha que usara Firebase por milisegundos
+    private long timestamp; //Fecha que usara Firebase por milisegundos
 
     public String getIdProductos() {
         return idProductos;
@@ -48,11 +48,11 @@ public class Productos {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public String getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 

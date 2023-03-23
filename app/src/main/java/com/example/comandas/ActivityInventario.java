@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.comandas.Adaptadores.ListViewProductosAdapter;
 import com.example.comandas.Models.Productos;
@@ -24,7 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.TimeZone;
+import java.util.UUID;
 
 public class ActivityInventario extends AppCompatActivity {
 
@@ -97,14 +102,14 @@ public class ActivityInventario extends AppCompatActivity {
                 }
 
                 //Iniciar nuestro adaptador
-
-                arrayAdapterProductos = new ArrayAdapter<Productos>(
+                listViewProductosAdapter = new ListViewProductosAdapter(ActivityInventario.this, listProductos);
+               /* arrayAdapterProductos = new ArrayAdapter<Productos>(
                         ActivityInventario.this,
                         android.R.layout.simple_list_item_1,
                         listProductos
-                );
+                );*/
 
-                listViewProductos.setAdapter(arrayAdapterProductos);
+                listViewProductos.setAdapter(listViewProductosAdapter);
 
             }
 
@@ -153,6 +158,54 @@ public class ActivityInventario extends AppCompatActivity {
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
         dialog.show();
+
+        btnInsertar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nombreP = mInputNombreP.getText().toString();
+                String unidadP = mInputUnidadP.getText().toString();
+                String precioP = mInputPrecioP.getText().toString();
+                if (nombreP.isEmpty() || nombreP.length()<3){
+                    showError(mInputNombreP, "Nombre invalido (Min. 3 letras)");
+                } else if (unidadP.isEmpty() || unidadP.length() < 0) {
+                    showError(mInputUnidadP, "Número de unidad invalido, verifique la cantidad");
+                } else if (precioP.isEmpty() || precioP.length() < 0) {
+                    showError(mInputPrecioP, "Precio invalido, verifique la cantidad");
+                }else {
+                    Productos p = new Productos();
+                    p.setIdProductos(UUID.randomUUID().toString());
+                    p.setNombreProducto(nombreP);
+                    p.setNumUnidades(unidadP);
+                    p.setPrecioProducto(precioP);
+                    p.setFechaRegistro(getFechaNormal(getFechaMilisegundos()));
+                    p.setTimestamp(getFechaMilisegundos() * -1);
+
+                    databaseReference.child("Productos").child(p.getIdProductos()).setValue(p);
+                    Toast.makeText(ActivityInventario.this,
+                            "Producto registrado correctamente",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void showError(EditText input, String s){
+        input.requestFocus();
+        input.setError(s);
+    }
+
+    public long  getFechaMilisegundos(){
+        Calendar calendar =Calendar.getInstance();
+        long tiempounix = calendar.getTimeInMillis();
+
+        return tiempounix;
+    }
+
+    public String getFechaNormal(long fechamilisegundos){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-5"));
+        String fecha = simpleDateFormat.format(fechamilisegundos);
+        return fecha;
     }
 
 }
