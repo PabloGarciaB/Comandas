@@ -73,13 +73,15 @@ public class ActivityInventario extends AppCompatActivity {
             }
         });
 
+
+        /*
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 linearLayoutEditar.setVisibility(View.GONE);
-                productosSeleccionado = null;
+                    productosSeleccionado = null;
             }
-        });
+        });*/
 
         inicializarFirebase();
         listarProductos();
