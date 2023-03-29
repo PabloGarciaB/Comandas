@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -140,6 +141,37 @@ public class ActivityInventario extends AppCompatActivity {
             case R.id.menu_agregar:
                 insertar();
                 break;
+            case R.id.menu_guardar:
+                if (productosSeleccionado!=null) {
+                    if (validarInputs() == false) {
+                        Productos p = new Productos();
+                        p.setIdProductos(productosSeleccionado.getIdProductos());
+                        p.setNombreProducto(nombreP);
+                        p.setNumUnidades(unidadP);
+                        p.setPrecioProducto(precioP);
+                        p.setFechaRegistro(productosSeleccionado.getFechaRegistro());
+                        p.setTimestamp(productosSeleccionado.getTimestamp());
+                        databaseReference.child("Productos").child(p.getIdProductos()).setValue(p);
+                        Toast.makeText(this, "Producto actualizado", Toast.LENGTH_SHORT).show();
+
+                        linearLayoutEditar.setVisibility(View.GONE);
+                    }
+                }else {
+                    Toast.makeText(this, "Seleccione un producto", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.menu_eliminar:
+                if (productosSeleccionado!=null){
+                    Productos p2 = new Productos();
+                    p2.setIdProductos(productosSeleccionado.getIdProductos());
+                    databaseReference.child("Productos").child(p2.getIdProductos()).removeValue();
+                    linearLayoutEditar.setVisibility(View.GONE);
+                    Toast.makeText(this, "Producto eliminado correctamente", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(this, "Seleccione un producto a eliminar", Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
 
 
@@ -186,6 +218,7 @@ public class ActivityInventario extends AppCompatActivity {
                     Toast.makeText(ActivityInventario.this,
                             "Producto registrado correctamente",
                             Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
                 }
             }
         });
@@ -208,6 +241,25 @@ public class ActivityInventario extends AppCompatActivity {
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-5"));
         String fecha = simpleDateFormat.format(fechamilisegundos);
         return fecha;
+    }
+
+    public boolean validarInputs(){
+        String nombre_A = inputNombreArt.getText().toString();
+        String unidad_A = inputUnidadesArt.getText().toString();
+        String precio_A = inputPrecioArt.getText().toString();
+
+        if (nombre_A.isEmpty() || nombre_A.length() < 3){
+            showError(inputNombreArt, "Nombre invalido (Min. 3 letras)");
+            return true;
+        }else if(unidad_A.isEmpty() || unidad_A.length() < 0){
+            showError(inputUnidadesArt, "Número de unidad invalido, verifique la cantidad");
+            return true;
+        } else if (precio_A.isEmpty() || precio_A.length() < 0) {
+            showError(inputPrecioArt, "Precio invalido, verifique la cantidad");
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
